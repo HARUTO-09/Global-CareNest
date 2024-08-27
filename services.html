@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - CareNest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Light blue background */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for container */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #00796b; /* Dark teal for headings */
+            text-align: center;
+        }
+        .service-section {
+            margin-bottom: 40px;
+        }
+        .service-section h2 {
+            border-bottom: 2px solid #004d40; /* Darker teal for borders */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .service-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        .service-list li {
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .service-list li::after {
+            content: attr(data-tooltip);
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 5px;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+        .service-list li:hover::after {
+            display: block;
+        }
+        .centers {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+        .center-card {
+            width: 30%;
+            min-width: 200px;
+            padding: 20px;
+            background-color: #ffffff; /* White background for cards */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+        }
+        .center-card::after {
+            content: attr(data-tooltip);
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 5px;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+        .center-card:hover::after {
+            display: block;
+        }
+        .center-card h3 {
+            color: #00796b; /* Dark teal for headings */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Services</h1>
+
+        <!-- Doctor Specializations Section -->
+        <div class="service-section">
+            <h2>Types of Doctor Specializations</h2>
+            <ul class="service-list">
+                <li data-tooltip="Cardiology">Cardiology</li>
+                <li data-tooltip="Neurology">Neurology</li>
+                <li data-tooltip="Gynecology">Gynecology</li>
+                <li data-tooltip="Orthopedics">Orthopedics</li>
+                <li data-tooltip="Pediatrics">Pediatrics</li>
+                <li data-tooltip="Dermatology">Dermatology</li>
+                <li data-tooltip="Endocrinology">Endocrinology</li>
+                <li data-tooltip="Gastroenterology">Gastroenterology</li>
+                <li data-tooltip="Nephrology">Nephrology</li>
+                <li data-tooltip="Oncology">Oncology</li>
+                <li data-tooltip="Psychiatry">Psychiatry</li>
+                <li data-tooltip="Rheumatology">Rheumatology</li>
+            </ul>
+        </div>
+
+        <!-- Types of Scanning Centers Section -->
+        <div class="service-section">
+            <h2>Types of Scanning Centers Near Us</h2>
+            <div class="centers">
+                <!-- Scanning Center 1 -->
+                <div class="center-card" data-tooltip="Medical Imaging Center, hyderabad | Services: MRI, CT Scan, Ultrasound">
+                    <h3>Medical Imaging Center</h3>
+                    <p>hyderabad</p>
+                </div>
+                <!-- Scanning Center 2 -->
+                <div class="center-card" data-tooltip="Diagnostic Center, vijayawada | Services: X-ray, Ultrasound">
+                    <h3>Diagnostic Center</h3>
+                    <p>vijayawada</p>
+                </div>
+                <!-- Scanning Center 3 -->
+                <div class="center-card" data-tooltip="Radiology Clinic, mumbai | Services: CT Scan, MRI">
+                    <h3>Radiology Clinic</h3>
+                    <p>mumbai</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

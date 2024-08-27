@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px; /* Adjust max-width as needed */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .member {
+            flex: 1 0 20%; /* Adjust flex properties to control item width */
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Optional margin bottom for spacing */
+        }
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meet Our Team</h1>
+
+        <ul class="team-members">
+            <li class="member">
+                <img src="team2.jpg" alt="Team Member 1">
+                <h2>Dhanush</h2>
+                <p>Role: Developer</p>
+            </li>
+            <li class="member">
+                <img src="team3.jpg" alt="Team Member 2">
+                <h2>HVV.Satwik</h2>
+                <p>Role: Manager</p>
+            </li>
+            <li class="member">
+                <img src="team1.jpg" alt="Team Member 3">
+                <h2>Rohit</h2>
+                <p>Role: Developer</p>
+            </li>
+            <li class="member">
+                <img src="team4.jpg" alt="Team Member 4">
+                <h2>Sai Varun</h2>
+                <p>Role: Designer</p>
+            </li>
+            <!-- Add more team members as needed -->
+        </ul>
+    </div>
+</body>
+</html>

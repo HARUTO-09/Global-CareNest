@@ -1,0 +1,20 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.container p, .container h2');
+
+    function revealOnScroll() {
+        for (let i = 0; i < elements.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = elements[i].getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                elements[i].classList.add('active');
+            } else {
+                elements[i].classList.remove('active');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+});

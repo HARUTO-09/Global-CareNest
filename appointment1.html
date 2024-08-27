@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Appointment - CareNXT</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1ebed3;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1ebed3;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        input[type="time"]:focus,
+        select:focus {
+            border-color: #00796b;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #1ebed3;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"]:hover {
+            background-color: #1ebed3;
+        }
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+    <script>
+        function showAlert(event) {
+            event.preventDefault();
+            const date = document.getElementById('date').value;
+            if (date) {
+                alert(`Your appointment is booked at ${date}`);
+            } else {
+                alert('Please select a date for your appointment.');
+            }
+        }
+        
+        function updateDoctors() {
+            const specialization = document.getElementById('specialization').value;
+            const doctorSelect = document.getElementById('doctor');
+            let doctors = [];
+
+            if (specialization === "Gynecology") {
+                doctors = ["Dr. John Doe", "Dr. Jane Smith", "Dr. Mary Johnson", "Dr. Patricia Brown", "Dr. Jennifer Davis", "Dr. Linda Garcia", "Dr. Elizabeth Martinez", "Dr. Barbara Hernandez", "Dr. Susan Clark"];
+            } else if (specialization === "Pulmonology") {
+                doctors = ["Dr. Alex Brown", "Dr. Susan White", "Dr. Robert Harris", "Dr. Michael Lewis", "Dr. William Walker", "Dr. Charles Hall", "Dr. David Young", "Dr. James King", "Dr. Richard Scott"];
+            } else if (specialization === "Psychiatry") {
+                doctors = ["Dr. Linda Green", "Dr. Mark Taylor", "Dr. Nancy Adams", "Dr. Karen Baker", "Dr. Carol Perez", "Dr. Ruth Thompson", "Dr. Helen Anderson", "Dr. Sarah Murphy", "Dr. Deborah Rivera"];
+            } else if (specialization === "Orthopedics") {
+                doctors = ["Dr. Emma Grey", "Dr. Frank Blue", "Dr. Lisa Hernandez", "Dr. Paul Martinez", "Dr. Daniel Robinson", "Dr. Donald Clark", "Dr. George Rodriguez", "Dr. Betty Lewis", "Dr. Sharon Lee"];
+            }
+
+            doctorSelect.innerHTML = '<option value="">-- Select Doctor --</option>';
+            doctors.forEach(function(doctor) {
+                const option = document.createElement('option');
+                option.value = doctor;
+                option.textContent = doctor;
+                doctorSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Make an Appointment</h1>
+        <form onsubmit="showAlert(event)">
+            <div class="form-group">
+                <label for="specialization">Select Specialization:</label>
+                <select id="specialization" name="specialization" required onchange="updateDoctors()">
+                    <option value="">-- Select Specialization --</option>
+                    <option value="Gynecology">Gynecology</option>
+                    <option value="Pulmonology">Pulmonology</option>
+                    <option value="Psychiatry">Psychiatry</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="doctor">Select Doctor:</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">-- Select Doctor --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Your Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <input type="submit" value="Submit Appointment">
+        </form>
+    </div>
+</body>
+</html>

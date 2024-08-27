@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as a Doctor | CareNest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #00796b;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .benefits-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .benefits-list li {
+            color: #004d40;
+        }
+        form {
+            margin-top: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #004d40;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #004d40;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Join as a Doctor at CareNest</h1>
+
+        <div class="section">
+            <h2>Why Join CareNest?</h2>
+            <ul class="benefits-list">
+                <li>Access to a diverse patient base</li>
+                <li>State-of-the-art facilities and equipment</li>
+                <li>Collaborative team environment</li>
+                <li>Continuing education opportunities</li>
+                <li>Competitive compensation package</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Apply Now</h2>
+            <form action="/submit-application" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Your Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="specialization">Your Specialization</label>
+                <input type="text" id="specialization" name="specialization" required>
+
+                <label for="message">Brief Message (optional)</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
